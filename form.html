@@ -6,6 +6,61 @@
     <title>Document</title>
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body></body>
+  <body>
+    <nav>
+      <img src="./assets/curious-narwhal-logo.png" alt="curious-narwhal-logo" />
+      <img src="./assets/profile-illustration.png" alt="profile-illustration" />
+    </nav>
+    <div id="form-parent-container">
+      <div id="form-container">
+        <a id="back-button-parent" href="./">
+          <img src="./assets/back-button.svg" alt="back-button" />
+          <div>Back</div>
+        </a>
+        <div id="form-title">Add a Reminder</div>
+        <form action="">
+          <div class="form-group">
+            <label for="subscription-name">Subscription Name</label>
+            <input
+              type="text"
+              name="subscription-name"
+              id="subscription-name"
+              placeholder="e.g., John Doe"
+            />
+          </div>
+          <div class="form-group">
+            <label for="price">Price</label>
+            <input
+              type="number"
+              name="price"
+              id="price"
+              placeholder="e.g., 250000"
+            />
+          </div>
+          <div class="form-group">
+            <label for="frequency">Frequency</label>
+            <select name="frequency" id="frequency">
+              <option value="">select a valid frequency</option>
+              <option value="daily">Daily</option>
+              <option value="weekly">Weekly</option>
+              <option value="monthly">Monthly</option>
+              <option value="yearly">Yearly</option>
+            </select>
+          </div>
+          <div class="double-form-group">
+            <div class="form-group">
+              <label for="start-date">Start Date</label>
+              <input type="date" name="start-date" id="start-date" />
+            </div>
+            <div class="form-group">
+              <label for="end-date">End Date</label>
+              <input type="date" name="end-date" id="end-date" />
+            </div>
+          </div>
+          <button id="form-submit-button" type="submit">Save Changes</button>
+        </form>
+      </div>
+    </div>
+  </body>
   <script src="./main.js"></script>
 </html>
