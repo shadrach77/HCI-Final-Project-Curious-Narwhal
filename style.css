@@ -3,9 +3,184 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 /* index.html */
+/* -------- Global -------- */
+
+.bodydash {
+  background: #f4f7fb;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 30px;
+}
+
+.dashboard-container {
+  max-width: 1000px;
+  margin: auto;
+}
+
+/* -------- Greeting Section -------- */
+.greeting-section {
+  text-align: center;
+}
+
+/* Center the + button (move it below filters or keep it centered alone) */
+/* 3-column layout */
+.top-bar-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+}
+
+/* Left: search + filter stacked */
+.top-left {
+  flex: 1;
+}
+
+.filters-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 250px;
+}
+
+/* Center: + button centered horizontally */
+.top-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;   /* centers horizontally */
+  align-items: center;
+}
+
+/* Right: empty */
+.top-right {
+  flex: 1;
+}
+
+/* Square button */
+.add-button {
+  background: #007bff;
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.search-input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: white;
+  font-size: 15px;
+  width: 100%;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Restore dropdown styling */
+.dropdown-filter {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: white;
+  font-size: 15px;
+  width: 100%;
+}
+
+.dropdown-filter:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+
+/* -------- Table -------- */
+.data-table {
+  width: 100%;
+  margin-top: 25px;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
+}
+
+.table-header-row {
+  background: #007bff;
+  color: white;
+}
+
+.col-name,
+.col-start,
+.col-end,
+.col-price,
+.col-frequency,
+.col-actions {
+  padding: 14px;
+  text-align: left;
+  font-size: 16px;
+}
+
+/* Data rows */
+.table-data-row { }
+.data-name,
+.data-start,
+.data-end,
+.data-price,
+.data-frequency,
+.data-actions {
+  padding: 14px;
+  font-size: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Buttons */
+.btn-edit,
+.btn-delete {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn-icon {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+}
+
+.btn-edit:hover {
+  background: #e0f7e9;
+  color: #2e7d32;
+}
+
+.btn-delete:hover {
+  background: #fdecea;
+  color: #c62828;
+}
+
+.btn-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* Hover row */
+.table-data-row:hover td {
+  background: #f3f6ff;
+}
+
+
 
 /* sign-up.html */
 
