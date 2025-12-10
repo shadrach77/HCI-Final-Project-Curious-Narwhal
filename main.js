@@ -24,7 +24,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
   submitBtn.disabled = true;
   submitBtn.textContent = "Changes Saved";
 
-  // TODO: alidation and saving logic
+  // TODO: validation and saving logic
 
   showToast(
     "Reminder added successfully! <a href='./' style='color: white; text-decoration: underline'>Go to Homepage</a>"
@@ -34,3 +34,38 @@ document.querySelector("form").addEventListener("submit", (e) => {
     window.location.href = "./";
   }, 5000);
 });
+
+const radios = document.querySelectorAll('input[name="subscription-type"]');
+
+const withEnd = document.getElementById("subscription-with-end-fields");
+const withoutEnd = document.getElementById("subscription-without-end-fields");
+
+function toggleFields() {
+  const selected = document.querySelector(
+    'input[name="subscription-type"]:checked'
+  ).value;
+
+  if (selected === "yes") {
+    withEnd.style.display = "flex";
+    withoutEnd.style.display = "none";
+
+    endDate.required = true;
+    remindBefore.required = true;
+    startDate.required = false;
+    frequency.required = false;
+  } else {
+    withoutEnd.style.display = "flex";
+    withEnd.style.display = "none";
+
+    startDate.required = true;
+    frequency.required = true;
+    endDate.required = false;
+    remindBefore.required = false;
+  }
+}
+
+radios.forEach((radio) => {
+  radio.addEventListener("change", toggleFields);
+});
+
+toggleFields();

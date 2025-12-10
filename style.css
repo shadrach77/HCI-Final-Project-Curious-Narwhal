@@ -206,14 +206,19 @@ nav img {
 
 #form-parent-container {
   display: flex;
-  justify-content: center;
-}
-
-#form-container {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   width: 100%;
   max-width: 1200px;
   min-width: 250px;
-  margin: 20px 16px;
+  padding: 0px 32px;
+  margin: 20px auto;
+  background-color: #2e7d32;
+}
+
+#form-left-side-container {
+  width: 100%;
 }
 
 #back-button-parent {
@@ -264,15 +269,10 @@ form {
   appearance: none;
 }
 
-.double-form-group {
+.collapsible-form-groups {
   display: flex;
   flex-direction: column;
   gap: 15px;
-}
-
-.double-form-group .form-group {
-  flex: 1;
-  min-width: 0;
 }
 
 #form-submit-button {
@@ -300,6 +300,31 @@ form {
   box-shadow: none;
 }
 
+#form-right-side-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #c62828;
+}
+
+#form-right-side-container img {
+  display: none;
+}
+
+#form-right-side-container div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 8px;
+  justify-content: center;
+}
+
+#form-right-side-container div p {
+  font-style: italic;
+  color: #9ca3af;
+}
+
 #toast {
   position: fixed;
   bottom: 30px;
@@ -323,8 +348,20 @@ form {
 }
 
 @media (min-width: 576px) {
-  .double-form-group {
+  #form-right-side-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #c62828;
+  }
+
+  #form-parent-container {
     flex-direction: row;
-    gap: 10px;
+  }
+
+  #form-right-side-container img {
+    display: block;
+    width: 100%;
   }
 }
