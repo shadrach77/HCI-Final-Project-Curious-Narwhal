@@ -218,14 +218,16 @@ nav img {
 }
 
 #form-left-side-container {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
 }
 
 #back-button-parent {
   display: flex;
   gap: 5px;
   align-items: center;
-  margin-bottom: 5px;
   text-decoration: none;
   color: #03045e;
 }
@@ -234,11 +236,16 @@ nav img {
   width: 14px;
 }
 
+#form-heading {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 #form-title {
   text-align: center;
   font-size: 30px;
   font-weight: 500;
-  margin-bottom: 8px;
 }
 
 form {
@@ -301,7 +308,6 @@ form {
 }
 
 #form-right-side-container {
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -354,6 +360,7 @@ form {
     flex-direction: column;
     justify-content: center;
     background-color: #c62828;
+    flex: 1;
   }
 
   #form-parent-container {

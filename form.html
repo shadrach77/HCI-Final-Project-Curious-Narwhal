@@ -17,11 +17,14 @@
           <img src="./assets/back-button.svg" alt="back-button" />
           <div>Back</div>
         </a>
-        <div id="form-title">Add a Reminder</div>
-        <div>
-          Easily track your subscriptions and never miss a billing date. Add
-          your subscription details below to get timely reminders.
+        <div id="form-heading">
+          <div id="form-title">Add a Reminder</div>
+          <div>
+            Easily track your subscriptions and never miss a billing date. Add
+            your subscription details below to get timely reminders.
+          </div>
         </div>
+
         <form action="">
           <div class="form-group">
             <label for="subscription-name">Subscription Name</label>
@@ -72,7 +75,7 @@
             </div>
             <div class="form-group">
               <label for="remind-me-before">Remind me Before</label>
-              <select name="remind-me-before" id="remind-me-before" required>
+              <select name="remind-me-before" id="remind-me-before">
                 <option value="">select reminder timing</option>
                 <option value="1-day-before">1 day before</option>
                 <option value="3-days-before">3 days before</option>
@@ -87,12 +90,12 @@
           >
             <div class="form-group">
               <label for="start-date">Start Date</label>
-              <input type="date" name="start-date" id="start-date" required />
+              <input type="date" name="start-date" id="start-date" />
             </div>
 
             <div class="form-group">
               <label for="frequency">Frequency</label>
-              <select name="frequency" id="frequency" required>
+              <select name="frequency" id="frequency">
                 <option value="">select a valid frequency</option>
                 <option value="daily">Daily</option>
                 <option value="weekly">Weekly</option>

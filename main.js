@@ -39,6 +39,10 @@ const radios = document.querySelectorAll('input[name="subscription-type"]');
 
 const withEnd = document.getElementById("subscription-with-end-fields");
 const withoutEnd = document.getElementById("subscription-without-end-fields");
+const endDate = document.getElementById("end-date");
+const remindMeBefore = document.getElementById("remind-me-before");
+const startDate = document.getElementById("start-date");
+const frequency = document.getElementById("frequency");
 
 function toggleFields() {
   const selected = document.querySelector(
@@ -50,7 +54,7 @@ function toggleFields() {
     withoutEnd.style.display = "none";
 
     endDate.required = true;
-    remindBefore.required = true;
+    remindMeBefore.required = true;
     startDate.required = false;
     frequency.required = false;
   } else {
@@ -60,7 +64,7 @@ function toggleFields() {
     startDate.required = true;
     frequency.required = true;
     endDate.required = false;
-    remindBefore.required = false;
+    remindMeBefore.required = false;
   }
 }
 
