@@ -210,11 +210,12 @@ nav {
 /* form.html */
 
 #form-centering-parent-container {
-  height: calc(100vh - 120px);
+  min-height: calc(100vh - 45px);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  background-color: #03045e;
 }
 
 #form-parent-container {
@@ -228,6 +229,7 @@ nav {
   min-width: 250px;
   padding: 32px;
   margin: auto 20px;
+  background-color: white;
 }
 
 #form-left-side-container {
