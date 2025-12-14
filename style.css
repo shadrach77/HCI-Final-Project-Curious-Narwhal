@@ -28,181 +28,119 @@ nav {
 }
 
 /* index.html */
-/* -------- Global -------- */
-
-.bodydash {
-  background: #f4f7fb;
-  font-family: Arial, Helvetica, sans-serif;
+.dashboard-backround {
+  min-height: calc(100vh - 45px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #03045e;
 }
 
 .dashboard-container {
-  max-width: 1000px;
-  margin: auto;
-}
-
-.title-dashboard {
-  margin-top: 20px;
-}
-
-/* -------- Greeting Section -------- */
-.greeting-section {
-  text-align: center;
-}
-
-/* Center the + button (move it below filters or keep it centered alone) */
-/* 3-column layout */
-.top-bar-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 25px;
-}
-
-/* Left: search + filter stacked */
-.top-left {
-  flex: 1;
-}
-
-.filters-section {
+  position: relative;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  width: 250px;
+  gap: 32px;
+  width: 100%;
+  max-width: 1200px;
+  min-width: 250px;
+  padding: 32px;
+  margin: auto 20px;
+  background-color: white;
 }
 
-/* Center: + button centered horizontally */
-.top-center {
-  flex: 1;
+.dashboard-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  color: #03045e;
+}
+
+.dashboard-buttons{
   display: flex;
-  justify-content: center; /* centers horizontally */
-  align-items: center;
+  justify-content: space-between;
 }
 
-/* Right: empty */
-.top-right {
-  flex: 1;
+.left {
+  flex-direction: column;
+  gap: 3px;
+  font-size: 20px;
+  font-weight: 500;
 }
 
-/* Square button */
-.add-button {
-  background: #007bff;
-  color: white;
-  border: none;
-  width: 50px;
-  height: 50px;
-  border-radius: 12px;
-  font-size: 24px;
-  cursor: pointer;
+.left input {
+  border: 2px solid #03045e;
+  padding: 8px;
+  border-radius: 4px;
 }
 
-.search-input {
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  background: white;
-  font-size: 15px;
-  width: 100%;
-}
-
-.search-input:focus {
-  outline: none;
-  border-color: #007bff;
-}
-
-/* Restore dropdown styling */
-.dropdown-filter {
-  padding: 10px 15px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  background: white;
-  font-size: 15px;
-  width: 100%;
-}
-
-.dropdown-filter:focus {
-  outline: none;
-  border-color: #007bff;
-}
-
-/* -------- Table -------- */
-.data-table {
-  width: 100%;
-  margin-top: 25px;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
-}
-
-.table-header-row {
-  background: #007bff;
-  color: white;
-}
-
-.col-name,
-.col-start,
-.col-end,
-.col-price,
-.col-frequency,
-.col-actions {
-  padding: 14px;
-  text-align: left;
-  font-size: 16px;
-}
-
-/* Data rows */
-.table-data-row {
-}
-.data-name,
-.data-start,
-.data-end,
-.data-price,
-.data-frequency,
-.data-actions {
-  padding: 14px;
-  font-size: 15px;
-  border-bottom: 1px solid #eee;
-}
-
-/* Buttons */
-.btn-edit,
-.btn-delete {
-  padding: 6px 12px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.btn-icon {
-  border: none;
-  background: transparent;
-  cursor: pointer;
+.left select {
+  border: 2px solid #03045e;
   padding: 6px;
-  border-radius: 6px;
+  border-radius: 4px;
+  font-size: 16px;
+  appearance: none;
 }
 
-.btn-edit:hover {
-  background: #e0f7e9;
-  color: #2e7d32;
+.right {
+  margin-top: 75px;
+}
+#dashboard-add {
+  background-color: #03045e;
+  color: white;
+  padding: 6px;
+  border: 2px solid #03045e;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
-.btn-delete:hover {
-  background: #fdecea;
-  color: #c62828;
+table {
+  border-collapse: collapse;
+  border: none;
 }
 
-.btn-icon svg {
-  width: 18px;
-  height: 18px;
+th, td {
+  border: none;
+  padding: 10px;
 }
 
-/* Hover row */
-.table-data-row:hover td {
-  background: #f3f6ff;
+.top-table {
+  background-color: #02033d;
+  color: white;
+  text-align: left
 }
 
+.table-1 {
+  background-color: #f1f1f1;
+}
+
+.edit-button {
+  background-color: #ff6804;
+  color: white;
+  padding: 6px;
+  border: 2px solid #bc4b00;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.delete-button {
+  background-color: #ff0404;
+  color: white;
+  padding: 6px;
+  border: 2px solid #bc0000;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
 /* signup.html */
 
 /* login.html */
