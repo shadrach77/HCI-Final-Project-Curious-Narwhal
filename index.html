@@ -30,12 +30,13 @@
         <div class="dashboard-buttons">
           <div class="left">
             <p>Search</p>
-                <input class="search-input" type="text" placeholder="Search..." />
+                <input class="search-input" type="text" placeholder="Search..." oninput="applyFilters()" />
                 <p>Filters</p>
-                <select class="dropdown-filter">
-                  <option>Recent</option>
-                  <option>Oldest</option>
-                </select>
+                <select class="dropdown-filter" onchange="applyFilters()">
+                  <option value="">All</option>
+                  <option value="recurring">Recurring</option>
+                  <option value="non-recurring">Non-recurring</option>
+</select>
           </div>
             <div class="right">
               <button id="dashboard-add" onclick="location.href='form.html'"class="add-button">Add ✚</button>
@@ -43,45 +44,20 @@
         </div>
 
         <table class="dashboard-table">
-          <tr class="top-table">
-            <th>Name</th>
-            <th >Start</th>
-            <th>End</th>
-            <th>Price</th>
-            <th>Frequency</th>
-            <th>Edit/Delete</th>
-          </tr>
+  <thead>
+    <tr class="top-table">
+      <th>Name</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Price</th>
+      <th>Frequency</th>
+      <th>Edit/Delete</th>
+    </tr>
+  </thead>
 
-          <tr class="table-1">
-            <td>Spotify Premium</td>
-            <td>6/7/2023</td>
-            <td>6/7/2024</td>
-            <td>$10</td>
-            <td>Yearly</td>
-            <td>
-              <button class="edit-button">Edit ✎</button>
-              <button class="delete-button">Delete ✖</button>
-            </td>
-          </tr>
-          <tr class="table-2">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-            </td>
-          </tr>
-          <tr class="table-1">
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>
-            </td>
-          </tr>
-        </table>
+  <tbody id="subscription-list">
+  </tbody>
+</table>
       </div>
     </div>
 

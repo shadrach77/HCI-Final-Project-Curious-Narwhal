@@ -57,7 +57,7 @@ nav {
   color: #03045e;
 }
 
-.dashboard-buttons{
+.dashboard-buttons {
   display: flex;
   justify-content: space-between;
 }
@@ -103,7 +103,8 @@ table {
   border: none;
 }
 
-th, td {
+th,
+td {
   border: none;
   padding: 10px;
 }
@@ -111,7 +112,7 @@ th, td {
 .top-table {
   background-color: #02033d;
   color: white;
-  text-align: left
+  text-align: left;
 }
 
 .table-1 {
@@ -343,4 +344,14 @@ form {
     display: block;
     width: 100%;
   }
+}
+
+/* Homepage */
+#homepage-parent-container {
+  min-height: calc(100vh - 45px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: #03045e;
 }
