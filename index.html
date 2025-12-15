@@ -30,12 +30,13 @@
         <div class="dashboard-buttons">
           <div class="left">
             <p>Search</p>
-                <input class="search-input" type="text" placeholder="Search..." />
+                <input class="search-input" type="text" placeholder="Search..." oninput="applyFilters()" />
                 <p>Filters</p>
-                <select class="dropdown-filter">
-                  <option>Recent</option>
-                  <option>Oldest</option>
-                </select>
+                <select class="dropdown-filter" onchange="applyFilters()">
+                  <option value="">All</option>
+                  <option value="recurring">Recurring</option>
+                  <option value="non-recurring">Non-recurring</option>
+</select>
           </div>
             <div class="right">
               <button id="dashboard-add" onclick="location.href='form.html'"class="add-button">Add ✚</button>

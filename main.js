@@ -1,30 +1,103 @@
 /* index.html */
 const container = document.getElementById("subscription-list");
 
-if (container) {
-  const list = JSON.parse(localStorage.getItem("subscriptions")) || [];
+function renderTable(list) {
+  if (!container) return;
 
   container.innerHTML = list
     .map(
       (item) => `
-    <tr class="table-1">
-            <td>${item.name}</td>
-            <td>6/7/2023</td>
-            <td>6/7/2024</td>
-            <td>$10</td>
-            <td>Yearly</td>
-            <td>
-              <button class="edit-button" onclick="editSubscription(${item.id})">Edit ✎</button>
-              <button class="delete-button">Delete ✖</button>
-            </td>
-          </tr>
-  `
+        <tr>
+          <td>${item.name}</td>
+          <td>${item.startDate ?? "-"}</td>
+          <td>${item.endDate ?? "-"}</td>
+          <td>${item.price}</td>
+          <td>${item.frequency ?? "-"}</td>
+          <td>
+            <button class="edit-button" onclick="editSubscription(${item.id})">Edit ✎</button>
+            <button class="delete-button" onclick="deleteSubscription(${item.id})">Delete ✖</button>
+          </td>
+        </tr>
+      `
     )
     .join("");
 }
 
+const list = JSON.parse(localStorage.getItem("subscriptions")) || [];
+renderTable(list);
+
 function editSubscription(id) {
   window.location.href = `form.html?id=${id}`;
+}
+
+function deleteSubscription(id) {
+  const confirmDelete = confirm(
+    "Are you sure you want to delete this subscription?"
+  );
+  if (!confirmDelete) return;
+
+  let list = JSON.parse(localStorage.getItem("subscriptions")) || [];
+  list = list.filter((item) => item.id !== id);
+
+  localStorage.setItem("subscriptions", JSON.stringify(list));
+
+  renderTable(list);
+}
+
+// function filterSubscriptions() {
+//   const dropdown = document.querySelector(".dropdown-filter");
+//   const value = dropdown.value;
+
+//   let list = JSON.parse(localStorage.getItem("subscriptions")) || [];
+
+//   if (value === "recurring") {
+//     list = list.filter((item) => !item.hasEndDate);
+//   } else if (value === "non-recurring") {
+//     list = list.filter((item) => item.hasEndDate);
+//   }
+
+//   renderTable(list);
+// }
+
+// function searchSubscriptions() {
+//   const searchInput = document.querySelector(".search-input");
+//   const keyword = searchInput.value.toLowerCase();
+
+//   const list = JSON.parse(localStorage.getItem("subscriptions")) || [];
+
+//   const filtered = list.filter((item) =>
+//     item.name.toLowerCase().includes(keyword)
+//   );
+
+//   renderTable(filtered);
+// }
+
+let allSubscriptions = JSON.parse(localStorage.getItem("subscriptions")) || [];
+
+function applyFilters() {
+  let filtered = [...allSubscriptions];
+
+  // search
+  const searchInput = document.querySelector(".search-input");
+  const keyword = searchInput.value.toLowerCase();
+
+  if (keyword) {
+    filtered = filtered.filter((item) =>
+      item.name.toLowerCase().includes(keyword)
+    );
+  }
+
+  // filter
+  const dropdown = document.querySelector(".dropdown-filter");
+  const value = dropdown.value;
+
+  if (value === "recurring") {
+    filtered = filtered.filter((item) => !item.hasEndDate);
+  } else if (value === "non-recurring") {
+    filtered = filtered.filter((item) => item.hasEndDate);
+  }
+
+  renderTable(filtered);
 }
 
 /* sign-up.html */
