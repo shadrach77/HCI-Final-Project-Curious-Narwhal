@@ -63,8 +63,9 @@ nav {
 }
 
 .left {
-  flex-direction: column;
-  gap: 3px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
   font-size: 20px;
   font-weight: 500;
 }
@@ -84,7 +85,7 @@ nav {
 }
 
 .right {
-  margin-top: 75px;
+  margin-top: 20px;
 }
 #dashboard-add {
   background-color: #03045e;
@@ -96,6 +97,10 @@ nav {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+}
+
+#dashboard-add :hover {
+  background-color: #050799;
 }
 
 table {
