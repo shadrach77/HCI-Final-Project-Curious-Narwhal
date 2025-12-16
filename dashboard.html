@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curious Narwhal | Dashboard</title>
+    <link rel="stylesheet" href="./style.css" />
+  <body class="bodydash">
+    <nav>
+      <a href="./dashboard.html"
+        ><img
+          id="nav-logo"
+          src="./assets/curious-narwhal-logo.png"
+          alt="curious-narwhal-logo"
+      /></a>
+      <img
+        id="nav-profile"
+        src="./assets/profile-illustration.png"
+        alt="profile-illustration"
+      />
+      <div class="profile-dropdown" id="profileDropdown">
+      <a href="./index.html">Logout</a>
+    </div>
+    </nav>
+    <div class="dashboard-backround">
+      <div class="dashboard-container">
+        <div class="dashboard-title">
+          <h1>Dashboard</h1>
+          <h1>Good Morning, Jason</h1>
+        </div>
+        <div class="dashboard-buttons">
+          <div class="left">
+            <div class="filter-item">
+            <p>Search</p>
+                <input class="search-input" type="text" placeholder="Search..." oninput="applyFilters()" />
+            </div>
+            <div class="filter-item">
+                <p>Filters</p>
+                <select class="dropdown-filter" onchange="applyFilters()">
+                  <option value="">All</option>
+                  <option value="recurring">Recurring</option>
+                  <option value="non-recurring">Non-recurring</option>
+                </select>
+          </div>
+          </div>
+            <div class="right">
+              <button id="dashboard-add" onclick="location.href='form.html'"class="add-button">Add ✚</button>
+            </div>
+        </div>
+
+        <table class="dashboard-table">
+  <thead>
+    <tr class="top-table">
+      <th>Name</th>
+      <th>Start</th>
+      <th>End</th>
+      <th>Price</th>
+      <th>Frequency</th>
+      <th>Edit/Delete</th>
+    </tr>
+  </thead>
+
+  <tbody id="subscription-list">
+  </tbody>
+</table>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+  </body>
+</html>

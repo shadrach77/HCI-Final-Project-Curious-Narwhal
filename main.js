@@ -187,12 +187,12 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
   showToast(
     isEditMode
-      ? "Reminder added successfully! <a href='./' style='color: #03045e; text-decoration: underline; font-weight: 200'>Go to Homepage</a>"
-      : "Reminder changed successfully! <a href='./' style='color: #03045e; text-decoration: underline; font-weight: 200'>Go to Homepage</a>"
+      ? "Reminder added successfully! <a href='./dashboard.html' style='color: #03045e; text-decoration: underline; font-weight: 200'>Go to Homepage</a>"
+      : "Reminder changed successfully! <a href='./dashboard.html' style='color: #03045e; text-decoration: underline; font-weight: 200'>Go to Homepage</a>"
   );
 
   setTimeout(() => {
-    window.location.href = "./";
+    window.location.href = "./dashboard.html";
   }, 3000);
 });
 
@@ -236,7 +236,7 @@ if (editId) {
 
   if (!subscription) {
     alert("Subscription not found");
-    window.location.href = "./";
+    window.location.href = "./dashboard.html";
   }
 
   document.getElementById("subscription-name").value = subscription.name;
