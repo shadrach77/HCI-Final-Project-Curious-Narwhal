@@ -8,16 +8,20 @@
   </head>
   <body>
     <nav>
-      <img
-        id="nav-logo"
-        src="./assets/curious-narwhal-big-logo.png"
-        alt="curious-narwhal-logo"
-      />
+      <a href="./index.html"
+        ><img
+          id="nav-logo"
+          src="./assets/curious-narwhal-logo.png"
+          alt="curious-narwhal-logo"
+      /></a>
       <img
         id="nav-profile"
         src="./assets/profile-illustration.png"
         alt="profile-illustration"
       />
+      <div class="profile-dropdown" id="profileDropdown">
+        <a href="./home.html">Logout</a>
+      </div>
     </nav>
     <div id="form-centering-parent-container">
       <div id="form-parent-container">
@@ -41,7 +45,7 @@
                 type="text"
                 name="subscription-name"
                 id="subscription-name"
-                placeholder="e.g., John Doe"
+                placeholder="e.g., Spotify"
               />
               <div class="error-message hide-error-message">
                 <img src="./assets/alert-icon.svg" alt="alert-icon" />

@@ -1,3 +1,17 @@
+// Navbar
+const profile = document.getElementById("nav-profile");
+const dropdown = document.getElementById("profileDropdown");
+
+profile.addEventListener("click", (e) => {
+  e.stopPropagation();
+  dropdown.style.display =
+    dropdown.style.display === "block" ? "none" : "block";
+});
+
+document.addEventListener("click", () => {
+  dropdown.style.display = "none";
+});
+
 /* index.html */
 const container = document.getElementById("subscription-list");
 
@@ -43,34 +57,6 @@ function deleteSubscription(id) {
 
   renderTable(list);
 }
-
-// function filterSubscriptions() {
-//   const dropdown = document.querySelector(".dropdown-filter");
-//   const value = dropdown.value;
-
-//   let list = JSON.parse(localStorage.getItem("subscriptions")) || [];
-
-//   if (value === "recurring") {
-//     list = list.filter((item) => !item.hasEndDate);
-//   } else if (value === "non-recurring") {
-//     list = list.filter((item) => item.hasEndDate);
-//   }
-
-//   renderTable(list);
-// }
-
-// function searchSubscriptions() {
-//   const searchInput = document.querySelector(".search-input");
-//   const keyword = searchInput.value.toLowerCase();
-
-//   const list = JSON.parse(localStorage.getItem("subscriptions")) || [];
-
-//   const filtered = list.filter((item) =>
-//     item.name.toLowerCase().includes(keyword)
-//   );
-
-//   renderTable(filtered);
-// }
 
 let allSubscriptions = JSON.parse(localStorage.getItem("subscriptions")) || [];
 
@@ -118,7 +104,7 @@ function showToast(message, duration = 3000) {
 document.querySelector("form").addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // RUN ALL VALIDATIONS
+  // Validating
   const isNameValid = validateSubscriptionName();
   const isPriceValid = validatePrice();
 
@@ -163,7 +149,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
   submitBtn.disabled = true;
   submitBtn.textContent = "Changes Saved";
 
-  // Add info to storage
+  // add to storage
   const subscription = {
     id: isEditMode ? Number(editId) : Date.now(),
     name: document.getElementById("subscription-name").value,
@@ -207,7 +193,7 @@ document.querySelector("form").addEventListener("submit", (e) => {
 
   setTimeout(() => {
     window.location.href = "./";
-  }, 5000);
+  }, 3000);
 });
 
 const radios = document.querySelectorAll('input[name="subscription-type"]');
@@ -228,7 +214,7 @@ function toggleFields() {
     withEnd.style.display = "flex";
     withoutEnd.style.display = "none";
 
-    // Clear errors for fields inside NO section
+    // clear errors for fieldsno section
     document
       .querySelectorAll("#subscription-without-end-fields .error-message")
       .forEach((el) => el.classList.add("hide-error-message"));
@@ -236,7 +222,7 @@ function toggleFields() {
     withoutEnd.style.display = "flex";
     withEnd.style.display = "none";
 
-    // Clear errors for fields inside YES section
+    // clear errors for fields in yes section
     document
       .querySelectorAll("#subscription-with-end-fields .error-message")
       .forEach((el) => el.classList.add("hide-error-message"));
@@ -280,7 +266,7 @@ radios.forEach((radio) => {
 
 toggleFields();
 
-// Validation Logic
+// validation Logic
 
 function validateSubscriptionName() {
   const nameInput = document.getElementById("subscription-name");
